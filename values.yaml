@@ -1,0 +1,5 @@
+deployment:
+  imageRepo: 466089068450.dkr.ecr.us-east-1.amazonaws.com/expense/backend
+  imageVersion: 1.1.0
+service:
+  servicePort: 8080 # default value

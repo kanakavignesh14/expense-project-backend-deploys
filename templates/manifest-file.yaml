@@ -35,7 +35,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: kanakavignesh/ec2-user-backend:latest
+        image: "{{ .Values.deployment.imageRepo }}:{{ .Values.deployment.imageVersion}}"
         imagePullPolicy: IfNotPresent
         envFrom:
         - configMapRef:
@@ -68,5 +68,5 @@ spec:
     tier: backend
   ports:
     - protocol: TCP
-      port: 8080 # service port
+      port: {{ .Values.service.servicePort }} # service port
       targetPort: 8080 # container port
